@@ -13,8 +13,8 @@ from fastapi import HTTPException, Request
 from fastapi.responses import RedirectResponse
 from starlette.concurrency import run_in_threadpool
 
-ORIGIN = "https://sdgs-action-platform.vercel.app"
-CALLBACK = "https://sdgs-attendance-record.vercel.app/auth/sso/callback"
+ORIGIN = "https://sdgs-action-platform-prd.vercel.app"
+CALLBACK = "https://sdgs-attendance-record-prd.vercel.app/auth/sso/callback"
 
 
 def platform_request(path, token=None, payload=None):

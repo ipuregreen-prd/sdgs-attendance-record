@@ -85,7 +85,7 @@ class CourseSsoTests(unittest.TestCase):
         for path in ("/admin", "/admin/login"):
             response = self.client.get(path, follow_redirects=False)
             self.assertEqual(response.status_code, 302)
-            self.assertEqual(response.headers["location"], "https://sdgs-action-platform.vercel.app/#admin-attendance")
+            self.assertEqual(response.headers["location"], "https://sdgs-action-platform-prd.vercel.app/#admin-attendance")
 
     def test_embedded_course_tools_use_verified_staff_bearer_without_another_login(self):
         headers = {"Authorization": "Bearer platform-token", "X-Platform-Embedded": "1"}

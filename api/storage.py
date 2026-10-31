@@ -7,6 +7,9 @@ import urllib.request
 from contextlib import closing
 from pathlib import Path
 from urllib.parse import urlsplit
+from api.database_config import load_database_config
+
+load_database_config()
 
 DATABASE_NAME = "sdgs-attendance-record"
 

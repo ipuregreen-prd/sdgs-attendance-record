@@ -60,7 +60,7 @@
         <div id="panel-admins" class="bg-white p-6 rounded-2xl shadow-xs border border-gray-100 space-y-4">
           <h3 class="text-base font-bold">系統管理帳號與權限</h3>
           <p class="text-sm text-gray-600">帳號與權限已集中至系統統一後台，課程模組共用相同登入。</p>
-          <a class="ds-button" href="https://sdgs-action-platform.vercel.app/#admin">前往統一後台維護帳號</a>
+          <a class="ds-button" href="https://sdgs-action-platform-prd.vercel.app/#admin">前往統一後台維護帳號</a>
         </div>
 
         <!-- 面板 2: 學員名單維護 -->
@@ -70,7 +70,7 @@
               <span>👥 學員名單維護</span>
               <span class="text-xs text-gray-400 font-normal">共 {{ students|length }} 位學員</span>
             </h3>
-            <a class="ds-button" href="https://sdgs-action-platform.vercel.app/#admin">至統一後台維護學員帳號</a>
+            <a class="ds-button" href="https://sdgs-action-platform-prd.vercel.app/#admin">至統一後台維護學員帳號</a>
           </div>
           <p class="text-sm text-gray-600">顯示同步的系統學員與既有課程紀錄；登入及權限以系統統一名冊為準。</p>
 
@@ -95,7 +95,7 @@
                   <td class="p-3 text-blue-700 text-xs font-medium">{{ s.email_pathdemy or s.email }}</td>
                   <td class="p-3 text-gray-600 text-xs">{{ s.phone }}</td>
                   <td class="p-3 text-right space-x-2">
-                    <a href="https://sdgs-action-platform.vercel.app/#admin" class="text-xs text-emerald-800 underline">統一維護</a>
+                    <a href="https://sdgs-action-platform-prd.vercel.app/#admin" class="text-xs text-emerald-800 underline">統一維護</a>
                   </td>
                 </tr>
                 {% endfor %}

@@ -105,7 +105,7 @@ async def initialize_database():
 @app.middleware("http")
 async def persistent_course_data(request: Request, call_next):
     if request.url.path in {"/admin", "/admin/login"} and request.headers.get("x-platform-embedded") != "1":
-        return RedirectResponse("https://sdgs-action-platform.vercel.app/#admin-attendance", status_code=302)
+        return RedirectResponse("https://sdgs-action-platform-prd.vercel.app/#admin-attendance", status_code=302)
     if request.url.path in {"/", "/healthz", "/sso/login", "/auth/sso/callback", "/sso/logout", "/logout"} or request.url.path.startswith("/static/"):
         return await call_next(request)
     try:
@@ -153,7 +153,7 @@ async def persistent_course_data(request: Request, call_next):
     if request.url.path.startswith("/api/admin/students") and request.method in {"POST", "PUT", "PATCH", "DELETE"}:
         if not get_current_admin(request):
             return JSONResponse(status_code=401, content={"error": "未授權"})
-        return JSONResponse(status_code=409, content={"error": "帳號已統一管理，請至系統管理後台維護", "management_url": "https://sdgs-action-platform.vercel.app/#admin"})
+        return JSONResponse(status_code=409, content={"error": "帳號已統一管理，請至系統管理後台維護", "management_url": "https://sdgs-action-platform-prd.vercel.app/#admin"})
     response = await call_next(request)
     if original is not None and response.status_code < 400 and data != original:
         try:
